@@ -1,0 +1,18 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "A api made for todo list using mongo,mongoose",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Api",
+    "todo-list"
+  ],
+  "author": "Prashant Rajoriya",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
