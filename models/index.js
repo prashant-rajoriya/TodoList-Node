@@ -5,6 +5,6 @@ mongoose.connect('mongodb://localhost/todo-api')
     .then(console.log('Database connected'))
     .catch(err => console.error(err));
 
-mongoose.Promise = mongoose.Promise;
+mongoose.Promise = Promise;
 
-module.exports = require('./todo');
+module.exports.Todo = require('./todo');

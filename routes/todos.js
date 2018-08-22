@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-var db = require('../models');
+let db = require('../models');
 
 router.get('/', (req, res) => {
     db.Todo.find()
@@ -10,4 +10,20 @@ router.get('/', (req, res) => {
             res.send(err);
         });
 });
+
+router.post('/', (req, res) => {
+    db.Todo.create(req.body)
+        .then((newTodo) => {
+            res.status(201).json(newTodo);
+        }).catch((err) => {
+            console.error(err);
+        });
+});
+
+router.get('/:todoID', (req, res) => {
+    db.Todo.findById(req.params.todoID)
+        .then( todo => res.json(todo) )
+        .catch( err => console.error(err));
+});
+
 module.exports = router;
